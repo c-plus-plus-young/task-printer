@@ -10,7 +10,7 @@ const { spawn } = require('child_process');
 //     myTask();
 // });
 
-cron.schedule("15 10 * * 5", () => {
+cron.schedule("32 10 * * 5", () => {
     console.log("Running scheduled task at 7AM on Mon/Wed/Fri");
     // Your function here
     myTask();
