@@ -152,10 +152,11 @@ cron.schedule("0 20 * * *", () => {
 // indicated by type
 function myTask(type, data) {
     // Spawn Python process
+    let python;
     if (type === "message") {
-        const python = spawn('python3', ['src/print.py', data]);
+        python = spawn('python3', ['src/print.py', data]);
     } else {
-        const python = spawn('python3', ['src/print_image.py', data]);
+        python = spawn('python3', ['src/print_image.py', data]);
     }
     // Listen for output
     python.stdout.on('data', (data) => {
