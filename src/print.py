@@ -18,7 +18,6 @@ def print_message(message):
 
 def cut():
 	# Feed a few lines and cut
-	p.text("\n")
 	p.cut(mode='PART') # partial cut, leaves corner attached
 
 def main():

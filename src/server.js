@@ -209,7 +209,9 @@ function onConnection(conn) {
         delete users[name];
         shoutOut(`${name} has left the chat!\n`, false);
     });
-
+    conn.on('error', function onError(err) {
+        log(`Connection error with ${name || "unknown"}: ${err.message}`);
+    });
     function shoutOut(msg, printMsg) {
         if (printMsg) {
             log(`Printing message`);
