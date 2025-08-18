@@ -13,6 +13,7 @@ let workout_arm_day =
 // 12345678901234567890123456789012345
 `Arm Day
 
+<<<<<<< HEAD
 Warm up (10 min):
 5min row machine/arm bike
 2min band pull aparts/wall slides
@@ -38,7 +39,6 @@ let workout_full_body_day = ``
 
 cron.schedule("0 7 * * 1", () => {
     console.log("Running scheduled task at 7AM on Mon");
-    // Your function here
     myTask(workout_arm_day);
 });
 

@@ -1,0 +1,26 @@
+{
+  "name": "task-printer",
+  "version": "1.0.0",
+  "description": "Prints tasks to a receipt printer",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-plus-plus-young/task-printer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-plus-plus-young/task-printer/issues"
+  },
+  "homepage": "https://github.com/c-plus-plus-young/task-printer#readme",
+  "dependencies": {
+    "node-cron": "^4.2.1"
+  }
+}
