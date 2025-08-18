@@ -141,9 +141,9 @@ cron.schedule("0 20 * * *", () => {
     log("Printing tidy up reminder - 8PM");
     myTask("message", tidy);
 });
-cron.schedule("32 9 * * *", () => {
-    log("Printing test message");
-    myTask("message", "test1");
+cron.schedule("0 7 * * 4", () => {
+    log("Printing Laundry Reminder - 8AM");
+    myTask("message", "Do Laundry");
 });
 
 // example image schedule
