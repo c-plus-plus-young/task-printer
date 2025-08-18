@@ -9,18 +9,44 @@ const { spawn } = require('child_process');
 //     // Your function here
 //     myTask();
 // });
+let workout_arm_day = 
+// 12345678901234567890123456789012345
+`Arm Day
 
-cron.schedule("15 10 * * 5", () => {
-    console.log("Running scheduled task at 7AM on Mon/Wed/Fri");
+Warm up (10 min):
+5min row machine/arm bike
+2min band pull aparts/wall slides
+1min shoulder shrugs + wrist rolls
+2min light dynamic stretches
+
+Cardio (20 min):
+Elliptical challenge:
+2min 1/1min off
+Repeat 4 cycles
+
+Strength
+Beginner Upper Body Circuit (30min):
+3 rounds, alternate with partner
+10 Dumbbell chest presses (bench)
+8-10 Assisted pull-up/lat pulldowns
+12 cable tricep pushdowns
+10 dumbbell bicep curls
+10 shoulder presses (machine)
+15 (per side) seated ab twist`;
+let workout_leg_day = ``
+let workout_full_body_day = ``
+
+cron.schedule("0 7 * * 1", () => {
+    console.log("Running scheduled task at 7AM on Mon");
     // Your function here
-    myTask();
+    myTask(workout_arm_day);
 });
 
-function myTask() {
+function myTask(message) {
 
     // Spawn Python process
     // const python = spawn('python3', ['print.py', 'arg1', 'arg2']);
-    const python = spawn('python3', ['print.py']);
+    const python = spawn('python3', ['print.py', message]);
 
     // Listen for output
     python.stdout.on('data', (data) => {

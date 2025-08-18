@@ -18,28 +18,6 @@ p.device_profile = {
 def print_message(message):
 	p.text(message)
 
-def print_aperture_logo():
-	p.text("              .,-:;//;:=,")
-	p.text("          . :H@@@MM@M#H/.,+%;,")
-	p.text("       ,/X+ +M@@M@MM%=,-%HMMM@X/,")
-	p.text("     -+@MM; $M@@MH+-,;XMMMM@MMMM@+-")
-	p.text("    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.")
-	p.text("  ,%MM@@MH ,@%=             .---=-=:=,.")
-	p.text("  =@#@@@MX.,                -%HX$$%%%:;")
-	p.text(" =-./@M@M$                   .;@MMMM@MM:")
-	p.text(" X@/ -$MM/                    . +MM@@@M$")
-	p.text(",@M@H: :@:                    . =X#@@@@-")
-	p.text(",@@@MMX, .                    /H- ;@M@M=")
-	p.text(".H@@@@M@+,                    %MM+..%#$.")
-	p.text(" /MMMM@MMH/.                  XM@MH; =;")
-	p.text("  /%+%$XHH@$=              , .H@@@@MX,")
-	p.text("   .=--------.           -%H.,@@@@@MX,")
-	p.text("   .%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%.")
-	p.text("     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX=")
-	p.text("       =%@M@M#@$-.=$@MM@@@M; %M%=")
-	p.text("         ,:+$+-,/H#MMMMMMM@= =,")
-	p.text("               =++%%%%+/:-.")
-
 def print_image():
 	# Load and print image
 	image = Image.open("../test/test.png")
@@ -50,10 +28,9 @@ def cut():
 	p.text("\n\n\n")
 	p.cut(mode='PART') # partial cut, leaves corner attached
 
-
 def main():
-    # if sys.argv[1] == "message":
-	# 	print_message(message)
-	print_aperture_logo()
+	message = sys.argv[1]
+	print_message(message)
+	cut()
 
 main()
