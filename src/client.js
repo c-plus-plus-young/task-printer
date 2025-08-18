@@ -12,7 +12,7 @@ const handler = {
     connect() {
         this.retries = 0;
         log('Connecting. . .');
-        this.conn = net.createConnection({ host: "192.168.x.xxx", port });
+        this.conn = net.createConnection({ host: host, port });
         this.conn.on('close', this.close.bind(this));
         this.conn.on('error', this.error.bind(this));
         process.stdin.resume();

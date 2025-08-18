@@ -197,21 +197,23 @@ function onConnection(conn) {
             } else {
                 name = data;
                 users[name] = conn;
-                shoutOut(`${name} has joined the room!\n`);
+                shoutOut(`${name} has joined the room!\n`, false);
             }
         } else {
-            shoutOut(`${name}: ${data}\n`);
+            shoutOut(`${data}\n`, true);
         }
     });
     conn.on('close', function onClose() {
         count -= 1;
         delete users[name];
-        shoutOut(`${name} has left the chat!\n`);
+        shoutOut(`${name} has left the chat!\n`, false);
     });
 
-    function shoutOut(msg) {
-        log(`Printing message`);
-        myTask("message", msg);
+    function shoutOut(msg, printMsg) {
+        if (printMsg) {
+            log(`Printing message`);
+            myTask("message", msg);
+        }
         Object.keys(users)
             .forEach(user => {
                 if (user != name) {
