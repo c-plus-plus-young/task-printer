@@ -1,6 +1,7 @@
 const net = require('net');
 const log = console.log;
 const port = 1024;
+const host = "10.0.0.53";
 
 const handler = {
     retries: 0,
@@ -11,7 +12,7 @@ const handler = {
     connect() {
         this.retries = 0;
         log('Connecting. . .');
-        this.conn = net.createConnection(port);
+        this.conn = net.createConnection({ host: "192.168.x.xxx", port });
         this.conn.on('close', this.close.bind(this));
         this.conn.on('error', this.error.bind(this));
         process.stdin.resume();

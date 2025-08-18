@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/c-plus-plus-young/task-printer#readme",
   "dependencies": {
+    "net": "^1.0.2",
     "node-cron": "^4.2.1"
   }
 }

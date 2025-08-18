@@ -210,7 +210,7 @@ function onConnection(conn) {
     });
 
     function shoutOut(msg) {
-        shoutOut(`Printing message`);
+        log(`Printing message`);
         myTask("message", msg);
         Object.keys(users)
             .forEach(user => {
