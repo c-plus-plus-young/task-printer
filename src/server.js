@@ -36,15 +36,15 @@ Beginner Upper Body Circuit (30min):
 let workout_leg_day = ``
 let workout_full_body_day = ``
 
-cron.schedule("0 7 * * 0", () => {
+cron.schedule("0 7 * * 1", () => {
     console.log("Running scheduled task at 7AM on Mon");
     // myTask(workout_arm_day);
     myTask(workout_arm_day);
 });
-cron.schedule("08 17 * * 0", () => {
+cron.schedule("44 19 * * 0", () => {
     console.log("Running scheduled task at 7AM on Mon");
     // myTask(workout_arm_day);
-    myImage('src/shark.png')
+    myImage('media/hammerhead.png')
 });
 
 function myTask(message) {
@@ -72,7 +72,7 @@ function myTask(message) {
 function myImage(image) {
     
     // Spawn Python process
-    const python = spawn('python3', ['src/print_image.py', message]);
+    const python = spawn('python3', ['src/print_image.py', image]);
     
     // Listen for output
     python.stdout.on('data', (data) => {

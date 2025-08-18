@@ -17,7 +17,7 @@ p.device_profile = {
 def print_image(image):
 	# Load and print image
 	image = Image.open(image)
-	p.image(image, align="center")
+	p.image(image)
 
 def cut():
 	# Feed a few lines and cut
