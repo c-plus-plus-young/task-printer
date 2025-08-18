@@ -1,7 +1,7 @@
 // NodeJS server to run scheduled tasks
 // Source venv python modules, then run from root folder
 const cron = require("node-cron");
-const log = console.log();
+const log = console.log;
 
 const { spawn } = require('child_process');
 
