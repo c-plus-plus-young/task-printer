@@ -1,4 +1,5 @@
 from escpos.printer import Usb
+from PIL import Image
 import sys
 
 # Replace with your printer's USB vendor and product IDs (from lsusb)
@@ -13,8 +14,10 @@ p.device_profile = {
 	"media":{"width":{"pixel":384}}
 }
 
-def print_message(message):
-	p.text(message)
+def print_image(image):
+	# Load and print image
+	image = Image.open(image)
+	p.image(image, align="center")
 
 def cut():
 	# Feed a few lines and cut
@@ -22,8 +25,8 @@ def cut():
 	p.cut(mode='PART') # partial cut, leaves corner attached
 
 def main():
-	message = sys.argv[1]
-	print_message(message)
+	image = sys.argv[1]
+	print_image(image)
 	cut()
 
 main()

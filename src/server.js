@@ -36,17 +36,44 @@ Beginner Upper Body Circuit (30min):
 let workout_leg_day = ``
 let workout_full_body_day = ``
 
-cron.schedule("02 17 * * 0", () => {
+cron.schedule("0 7 * * 0", () => {
     console.log("Running scheduled task at 7AM on Mon");
     // myTask(workout_arm_day);
+    myTask(workout_arm_day);
+});
+cron.schedule("08 17 * * 0", () => {
+    console.log("Running scheduled task at 7AM on Mon");
+    // myTask(workout_arm_day);
+    myImage('src/shark.png')
 });
 
 function myTask(message) {
 
     // Spawn Python process
-    // const python = spawn('python3', ['print.py', 'arg1', 'arg2']);
-    // const python = spawn('python3', ['src/print.py', message]);
-    const python = spawn('python3'
+    const python = spawn('python3', ['src/print.py', message]);
+    
+    // Listen for output
+    python.stdout.on('data', (data) => {
+        console.log(`Output: ${data}`);
+    });
+
+    // Listen for errors
+    python.stderr.on('data', (data) => {
+        console.error(`Error: ${data}`);
+    });
+
+    // Handle exit
+    python.on('close', (code) => {
+        console.log(`Python process exited with code ${code}`);
+    });
+
+}
+
+function myImage(image) {
+    
+    // Spawn Python process
+    const python = spawn('python3', ['src/print_image.py', message]);
+    
     // Listen for output
     python.stdout.on('data', (data) => {
         console.log(`Output: ${data}`);
