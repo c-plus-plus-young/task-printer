@@ -25,7 +25,7 @@ const handler = {
         process.stdin.removeAllListeners();
         // this.reconnect();
     },
-    error() {
+    error(err) {
         log(`Error: ${err}`);
         process.stdin.removeAllListeners();
         this.reconnect();
