@@ -41,7 +41,7 @@ cron.schedule("0 7 * * 1", () => {
     // myTask(workout_arm_day);
     myTask(workout_arm_day);
 });
-cron.schedule("44 19 * * 0", () => {
+cron.schedule("6 20 * * 0", () => {
     console.log("Running scheduled task at 7AM on Mon");
     // myTask(workout_arm_day);
     myImage('media/hammerhead.png')
